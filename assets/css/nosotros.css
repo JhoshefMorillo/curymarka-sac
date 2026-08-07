@@ -1,3 +1,6 @@
+/* ============================================================
+   BANNER (compartido por Nosotros, Servicios, Contacto)
+   ============================================================ */
 .page-banner {
   position: relative;
   height: 60vh;
@@ -39,18 +42,9 @@
   margin-bottom: 0.8rem;
 }
 
-@media (max-width: 768px) {
-  .page-banner {
-    height: auto;
-    min-height: 20rem;
-    padding: 5rem 0;
-  }
-
-  .page-banner h1 {
-    font-size: 1.8rem;
-  }
-}
-
+/* ============================================================
+   QUIÉNES SOMOS
+   ============================================================ */
 .quienes-somos {
   padding-top: 4rem;
 }
@@ -69,18 +63,71 @@
   display: block;
 }
 
-@media (max-width: 768px) {
-  .quienes-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ============================================================
+   NUESTRA HISTORIA
+   ============================================================ */
 .historia {
   background: var(--color-white);
 }
 
+.historia-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.historia-item {
+  position: relative;
+  padding-top: 2rem;
+  padding-right: 1rem;
+}
+
+.historia-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-border);
+}
+
+.historia-item::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 4px solid var(--color-white);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.historia-año {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.historia-item p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  max-width: 250px;
+}
+
+/* ============================================================
+   NUESTRA EXPERIENCIA
+   ============================================================ */
 .experiencia {
-  background-color: var(--color-background-alt);
+  background-color: var(--color-white);
 }
 
 .experiencia-grid {
@@ -112,84 +159,9 @@
   line-height: 1.5;
 }
 
-@media (max-width: 900px) {
-  .experiencia-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.historia-timeline {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
-  margin-top: 4rem;
-  position: relative;
-}
-
-.historia-item {
-  position: relative;
-  padding-top: 2rem;
-  padding-right: 1rem;
-}
-
-/* Línea horizontal */
-.historia-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--color-border);
-}
-
-/* Punto azul */
-.historia-item::after {
-  content: "";
-  position: absolute;
-  top: -7px;
-  left: 0;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  border: 4px solid var(--color-white);
-  box-shadow: 0 0 0 1px var(--color-primary);
-}
-
-.historia-año {
-  display: block;
-  margin-top: 1rem;
-  margin-bottom: 0.8rem;
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--color-primary);
-}
-
-.historia-item p {
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: var(--color-text-muted);
-  max-width: 250px;
-}
-
-@media (max-width: 900px) {
-  .historia-timeline {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-  }
-}
-
-@media (max-width: 560px) {
-  .historia-timeline {
-    grid-template-columns: 1fr;
-  }
-
-  .historia-item p {
-    max-width: 100%;
-  }
-}
-
+/* ============================================================
+   NUESTRO COMPROMISO
+   ============================================================ */
 .compromiso-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -230,8 +202,48 @@
   display: block;
 }
 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .historia-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .experiencia-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 768px) {
+  .page-banner {
+    height: auto;
+    min-height: 20rem;
+    padding: 5rem 0;
+  }
+
+  .page-banner h1 {
+    font-size: 1.8rem;
+  }
+
+  .quienes-grid,
   .compromiso-grid {
     grid-template-columns: 1fr;
+  }
+
+  .quienes-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .historia-timeline,
+  .experiencia-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .historia-item p {
+    max-width: 100%;
   }
 }

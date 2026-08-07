@@ -15,7 +15,8 @@ async function cargarPartial(selector, archivo) {
 
 document.addEventListener("DOMContentLoaded", () => {
   cargarPartial("#header-placeholder", "partials/header.html").then(() => {
-    if (typeof marcarPaginaActiva === "function") marcarPaginaActiva();
-  });
+  if (typeof marcarPaginaActiva === "function") marcarPaginaActiva();
+  if (typeof activarMenuMovil === "function") activarMenuMovil();
+});
   cargarPartial("#footer-placeholder", "partials/footer.html");
 });

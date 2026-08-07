@@ -1,3 +1,6 @@
+/* ============================================================
+   RESET Y BASE
+   ============================================================ */
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +33,9 @@ img {
   padding: 5rem 0;
 }
 
+/* ============================================================
+   TÍTULOS Y TEXTOS GENÉRICOS
+   ============================================================ */
 .section-title {
   font-size: 2.6rem;
   font-weight: 800;
@@ -50,30 +56,13 @@ img {
   line-height: 1.7;
 }
 
-.btn-primary {
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: 0.8rem 2rem;
-  border-radius: 0.4rem;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background-color 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: var(--color-secondary);
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 3rem 0;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-  }
+.section-description {
+  font-size: 1rem;
+  color: var(--color-text);
+  text-align: center;
+  max-width: 55rem;
+  margin: 0 auto 3rem;
+  line-height: 1.75;
 }
 
 .section-tag {
@@ -85,15 +74,6 @@ img {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
-}
-
-.presentacion {
-  text-align: center;
-  padding-bottom: 2rem;
-}
-
-.presentacion .btn-primary {
-  margin-top: 0.5rem;
 }
 
 .section-title-left {
@@ -113,6 +93,40 @@ img {
   margin-bottom: 1.5rem;
 }
 
+/* ============================================================
+   BOTÓN PRIMARIO
+   ============================================================ */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.8rem 2rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+}
+
+/* ============================================================
+   SECCIÓN: PRESENTACIÓN (Inicio)
+   ============================================================ */
+.presentacion {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.presentacion .btn-primary {
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   SECCIÓN: CONOCE CURYMARKA (Inicio)
+   ============================================================ */
 .conoce {
   padding-top: 1.5rem;
   padding-bottom: 3rem;
@@ -133,14 +147,6 @@ img {
   height: 100%;
 }
 
-.conoce-line {
-  display: block;
-  width: 4.5rem;
-  height: 6px;
-  background-color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
 .conoce-image img {
   width: 100%;
   height: 100%;
@@ -149,6 +155,17 @@ img {
   display: block;
 }
 
+.conoce-line {
+  display: block;
+  width: 4.5rem;
+  height: 6px;
+  background-color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   SECCIÓN: ¿POR QUÉ ELEGIRNOS? (Inicio)
+   ============================================================ */
 .porque-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -183,27 +200,9 @@ img {
   line-height: 1.65;
 }
 
-@media (max-width: 900px) {
-  .porque-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 560px) {
-  .porque-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.section-description {
-  font-size: 1rem;
-  color: var(--color-text);
-  text-align: center;
-  max-width: 55rem;
-  margin: 0 auto 3rem;
-  line-height: 1.75;
-}
-
+/* ============================================================
+   SECCIÓN: TRAYECTORIA / CLIENTES (Inicio)
+   ============================================================ */
 .clientes {
   padding: 3rem 0;
   background-color: var(--color-white);
@@ -238,6 +237,10 @@ img {
   animation: scrollClientes 25s linear infinite;
 }
 
+.clientes-slide.pausado {
+  animation-play-state: paused;
+}
+
 .cliente-nombre {
   font-size: 1.05rem;
   font-weight: 700;
@@ -254,15 +257,6 @@ img {
   color: var(--color-primary);
 }
 
-@keyframes scrollClientes {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .cliente-logo {
   display: flex;
   align-items: center;
@@ -277,6 +271,11 @@ img {
     color 0.3s;
 }
 
+.cliente-logo:hover {
+  opacity: 1;
+  color: var(--color-primary);
+}
+
 .cliente-icono {
   width: 1.1rem;
   height: 1.1rem;
@@ -284,22 +283,18 @@ img {
   flex-shrink: 0;
 }
 
-.cliente-logo:hover {
-  opacity: 1;
-  color: var(--color-primary);
+@keyframes scrollClientes {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.clientes-slide {
-  display: flex;
-  gap: 4rem;
-  width: max-content;
-  animation: scrollClientes 25s linear infinite;
-}
-
-.clientes-slide.pausado {
-  animation-play-state: paused;
-}
-
+/* ============================================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   ============================================================ */
 .btn-whatsapp-flotante {
   position: fixed;
   bottom: 1.5rem;
@@ -336,6 +331,9 @@ img {
   }
 }
 
+/* ============================================================
+   ANIMACIÓN SCROLL REVEAL
+   ============================================================ */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -354,5 +352,55 @@ img {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .conoce-grid,
+  .quienes-grid,
+  .compromiso-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title-left,
+  .section-subtitle-left {
+    max-width: 100%;
+  }
+
+  .porque-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .porque-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .clientes-slide {
+    gap: 2.5rem;
   }
 }

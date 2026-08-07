@@ -1,3 +1,6 @@
+/* ============================================================
+   NUESTROS SERVICIOS
+   ============================================================ */
 .servicios-lista {
   background-color: var(--color-white);
   padding-top: 2rem;
@@ -23,25 +26,6 @@
 }
 .servicio-card:nth-child(5) {
   grid-column: 4 / 6;
-}
-
-@media (max-width: 900px) {
-  .servicios-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .servicio-card:nth-child(1),
-  .servicio-card:nth-child(2),
-  .servicio-card:nth-child(3),
-  .servicio-card:nth-child(4),
-  .servicio-card:nth-child(5) {
-    grid-column: auto;
-  }
-}
-
-@media (max-width: 560px) {
-  .servicios-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .servicio-card {
@@ -71,18 +55,9 @@
   line-height: 1.65;
 }
 
-@media (max-width: 900px) {
-  .servicios-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 560px) {
-  .servicios-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ============================================================
+   PROCESO DE TRABAJO
+   ============================================================ */
 .proceso-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -116,18 +91,9 @@
   line-height: 1.6;
 }
 
-@media (max-width: 900px) {
-  .proceso-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 560px) {
-  .proceso-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ============================================================
+   PREGUNTAS FRECUENTES
+   ============================================================ */
 .faq-lista {
   max-width: 44rem;
   margin: 3rem auto 0;
@@ -170,4 +136,33 @@
   font-size: 0.9rem;
   color: var(--color-text-muted);
   line-height: 1.7;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .servicios-grid,
+  .proceso-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .servicio-card:nth-child(1),
+  .servicio-card:nth-child(2),
+  .servicio-card:nth-child(3),
+  .servicio-card:nth-child(4),
+  .servicio-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .servicios-grid,
+  .proceso-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-item summary {
+    font-size: 0.92rem;
+  }
 }

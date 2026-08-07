@@ -1,9 +1,9 @@
 :root {
   /* ===== Colores de Marca ===== */
-  --color-primary: #0000ff;
-  --color-primary-hover: #003f7d;
-  --color-primary-light: #eaf4ff;
-  --color-secondary: #11455d;
+  --color-primary: #1a56db;
+  --color-primary-hover: #1543a8;
+  --color-primary-light: #eaf1fd;
+  --color-secondary: #0b1f3a;
 
   /* ===== Fondos ===== */
   --color-white: #ffffff;
@@ -19,7 +19,7 @@
   --color-border: #e2e8f0;
 
   /* ===== Footer ===== */
-  --color-footer-bg: #010308;
+  --color-footer-bg: #050a14;
   --color-footer-text: #cbd5e1;
 
   /* ===== Estados ===== */
