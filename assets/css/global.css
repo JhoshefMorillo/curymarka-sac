@@ -31,19 +31,23 @@ img {
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-text);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--color-heading);
   text-align: center;
-  margin-bottom: 1rem;
+  max-width: 68rem;
+  margin: 0 auto 2rem;
 }
 
 .section-subtitle {
   font-size: 1rem;
+  font-weight: 400;
   color: var(--color-text-muted);
   text-align: center;
-  max-width: 40rem;
-  margin: 0 auto 3rem;
+  max-width: 50rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
 }
 
 .btn-primary {
@@ -70,4 +74,23 @@ img {
   .section-title {
     font-size: 1.6rem;
   }
+}
+
+.section-tag {
+  display: block;
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.presentacion {
+  text-align: center;
+}
+
+.presentacion .btn-primary {
+  margin-top: 0.5rem;
 }
