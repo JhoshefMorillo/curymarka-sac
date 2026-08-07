@@ -1,0 +1,104 @@
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.contacto-datos {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contacto-dato {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contacto-icono {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.contacto-dato strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-heading);
+  margin-bottom: 0.2rem;
+}
+
+.contacto-dato p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.contacto-form {
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.form-campo input,
+.form-campo textarea {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  transition: border-color 0.3s;
+}
+
+.form-campo input:focus,
+.form-campo textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.contacto-form .btn-primary {
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mapa-card {
+  width: 100%;
+  height: 26rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  margin-top: 2rem;
+}
+
+.mapa-card iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

@@ -299,3 +299,39 @@ img {
 .clientes-slide.pausado {
   animation-play-state: paused;
 }
+
+.btn-whatsapp-flotante {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: var(--color-whatsapp);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  z-index: 500;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  animation: pulseWhatsapp 2.5s ease-in-out infinite;
+}
+
+.btn-whatsapp-flotante:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+  animation-play-state: paused;
+}
+
+@keyframes pulseWhatsapp {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 4px 28px rgba(37, 211, 102, 0.85);
+  }
+}
