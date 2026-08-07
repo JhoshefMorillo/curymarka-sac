@@ -17,7 +17,8 @@
 }
 
 .logo {
-  height: 10rem;
+  height: 9rem;
+  transform: translate(30px, 3px);
 }
 
 .logo-link {
