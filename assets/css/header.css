@@ -111,3 +111,11 @@
     display: flex;
   }
 }
+
+.main-nav a.activo {
+  color: var(--color-primary);
+}
+
+.main-nav a.activo::after {
+  width: 100%;
+}

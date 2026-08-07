@@ -52,3 +52,123 @@ if (legalTabs) {
     });
   });
 }
+
+
+// Resalta en el menú la página actual (Inicio, Nosotros, Servicios, Contacto)
+function marcarPaginaActiva() {
+  const enlacesNav = document.querySelectorAll(".main-nav a");
+  const paginaActual = window.location.pathname.split("/").pop() || "index.html";
+
+  enlacesNav.forEach((enlace) => {
+    const hrefEnlace = enlace.getAttribute("href");
+    if (hrefEnlace === paginaActual) {
+      enlace.classList.add("activo");
+    }
+  });
+}
+
+function activarScrollReveal() {
+const selectoresReveal = [
+  ".porque-card",
+  ".servicio-card",
+  ".experiencia-card",
+  ".historia-item",
+  ".dato-card",
+  ".proceso-item",
+  ".faq-item",
+  ".conoce-grid",
+  ".quienes-grid",
+  ".compromiso-grid",
+];
+
+  const elementos = document.querySelectorAll(selectoresReveal.join(", "));
+  console.log("Elementos encontrados:", elementos.length); // TEMPORAL
+  elementos.forEach((el) => el.classList.add("reveal"));
+
+  function calcularDelay(el) {
+    const grid = el.closest(
+      ".porque-grid, .servicios-grid, .experiencia-grid, .historia-timeline, .datos-grid, .proceso-grid"
+    );
+    if (!grid) return 0;
+    const index = Array.from(grid.children).indexOf(el);
+    return Math.min(index * 0.1, 0.5);
+  }
+
+const observador = new IntersectionObserver(
+  (entradas) => {
+    entradas.forEach((entrada) => {
+      console.log(
+        "Callback disparado, isIntersecting:",
+        entrada.isIntersecting,
+        entrada.target,
+      ); // TEMPORAL
+      if (!entrada.isIntersecting) return;
+
+      const el = entrada.target;
+      const delay = calcularDelay(el);
+
+      el.style.transitionDelay = `${delay}s`;
+      el.classList.add("reveal--active");
+
+      setTimeout(
+        () => {
+          el.style.transitionDelay = "";
+        },
+        (delay + 0.6) * 1000,
+      );
+
+      observador.unobserve(el);
+    });
+  },
+  { threshold: 0 },
+);
+
+  elementos.forEach((el) => observador.observe(el));
+}
+
+document.addEventListener("DOMContentLoaded", activarScrollReveal);
+
+// Envío del formulario de contacto con EmailJS
+(function () {
+  emailjs.init("O_dVP1A-IBHP8kIVm");
+})();
+
+const formContacto = document.getElementById("form-contacto");
+const toastContacto = document.getElementById("toast-contacto");
+const toastMensajeTexto = document.getElementById("toast-mensaje-texto");
+
+function mostrarToastContacto(mensaje, esError = false) {
+  toastMensajeTexto.textContent = mensaje;
+  toastContacto.classList.toggle("error", esError);
+  toastContacto.classList.add("activo");
+
+  setTimeout(() => {
+    toastContacto.classList.remove("activo");
+  }, 4000);
+}
+
+if (formContacto) {
+  formContacto.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const botonEnviar = formContacto.querySelector("button[type='submit']");
+    const textoOriginal = botonEnviar.textContent;
+    botonEnviar.textContent = "Enviando...";
+    botonEnviar.disabled = true;
+
+    emailjs
+      .sendForm("service_x1njzkq", "template_b1qv2on", formContacto)
+      .then(() => {
+        mostrarToastContacto("Correo enviado. Nos pondremos en contacto contigo pronto.");
+        formContacto.reset();
+      })
+      .catch((error) => {
+        mostrarToastContacto("Hubo un error al enviar tu mensaje. Intenta nuevamente.", true);
+        console.error("Error EmailJS:", error);
+      })
+      .finally(() => {
+        botonEnviar.textContent = textoOriginal;
+        botonEnviar.disabled = false;
+      });
+  });
+}

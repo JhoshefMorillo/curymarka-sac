@@ -41,9 +41,9 @@
 }
 
 .hero-content h1 {
-  font-size: 3.2rem;
+  font-size: 7rem;
   font-weight: 800;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.9rem;
 }
 
 .hero-content p {
@@ -51,6 +51,22 @@
   color: #cbd5e1;
   line-height: 1.6;
   max-width: 30rem;
+}
+
+.hero-content--inicio {
+  max-width: none;
+}
+
+.hero-content--inicio h1 {
+  font-size: clamp(2.5rem, 7vw, 7rem);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .hero-content--inicio h1 {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 768px) {

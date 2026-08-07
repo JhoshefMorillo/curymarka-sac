@@ -26,7 +26,7 @@
     <main>
       <section class="page-banner">
         <img
-          src="assets/img/banner-contacto.jpg"
+          src="assets/img/banner-contacto.png"
           alt="Curymarka SAC - Contacto"
           class="page-banner-img"
         />
@@ -67,7 +67,7 @@
                 </svg>
                 <div>
                   <strong>Correo</strong>
-                  <p>correo@curymarka.com</p>
+                  <p>jhoshefdev@gmail.com</p>
                 </div>
               </div>
 
@@ -88,7 +88,7 @@
                 </svg>
                 <div>
                   <strong>Teléfono</strong>
-                  <p>+51 900 000 000</p>
+                  <p>+51 929 125 857</p>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@
             </div>
           </div>
 
-          <form class="contacto-form">
+          <form class="contacto-form" id="form-contacto">
             <div class="form-campo">
               <label for="nombre">Nombre completo</label>
               <input type="text" id="nombre" name="nombre" required />
@@ -154,6 +154,9 @@
             </div>
 
             <button type="submit" class="btn-primary">Enviar mensaje</button>
+            <div id="toast-contacto" class="toast-contacto">
+              <span id="toast-mensaje-texto"></span>
+            </div>
           </form>
         </div>
       </section>
@@ -177,41 +180,12 @@
           </div>
         </div>
       </section>
-
-      <section class="section datos-adicionales">
-        <div class="container datos-grid">
-          <div class="dato-card">
-            <h3>Horario de atención</h3>
-            <p>Lunes a viernes: 9:00 am – 6:00 pm</p>
-            <p>Sábados: 9:00 am – 1:00 pm</p>
-          </div>
-
-          <div class="dato-card">
-            <h3>Redes sociales</h3>
-            <div class="datos-redes">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                >LinkedIn</a
-              >
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                >Facebook</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <script src="assets/js/partials.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/partials.js"></script>
   </body>
 </html>
