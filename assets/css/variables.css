@@ -1,0 +1,48 @@
+:root {
+  /* ===== Colores de Marca ===== */
+  --color-primary: #0000ff;
+  --color-primary-hover: #003f7d;
+  --color-primary-light: #eaf4ff;
+  --color-secondary: #11455d;
+
+  /* ===== Fondos ===== */
+  --color-white: #ffffff;
+  --color-background: #ffffff;
+  --color-background-alt: #f8fafc;
+
+  /* ===== Textos ===== */
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-heading: #0f172a;
+
+  /* ===== Bordes ===== */
+  --color-border: #e2e8f0;
+
+  /* ===== Footer ===== */
+  --color-footer-bg: #010308;
+  --color-footer-text: #cbd5e1;
+
+  /* ===== Estados ===== */
+  --color-success: #22c55e;
+  --color-whatsapp: #25d366;
+
+  /* ===== Tipografía ===== */
+  --font-main: "Manrope", sans-serif;
+
+  /* ===== Bordes ===== */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* ===== Sombras ===== */
+  --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 50px rgba(15, 23, 42, 0.12);
+
+  /* ===== Espaciado ===== */
+  --section-padding: 120px;
+  --container-width: 1200px;
+
+  /* ===== Transiciones ===== */
+  --transition: all 0.3s ease;
+}

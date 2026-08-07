@@ -1,0 +1,112 @@
+.site-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 999;
+}
+
+.header-container {
+  width: 100%;
+  margin: 0;
+  padding: 0 2rem 0 0.5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+}
+
+.logo {
+  height: 10rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding-bottom: 0.3rem;
+  transition: color 0.3s;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--color-primary);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.btn-header-cta {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-header-cta:hover {
+  background-color: var(--color-secondary);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .main-nav,
+  .btn-header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
