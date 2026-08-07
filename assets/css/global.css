@@ -89,8 +89,117 @@ img {
 
 .presentacion {
   text-align: center;
+  padding-bottom: 2rem;
 }
 
 .presentacion .btn-primary {
   margin-top: 0.5rem;
+}
+
+.section-title-left {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--color-heading);
+  max-width: 32rem;
+  margin-bottom: 1.2rem;
+}
+
+.section-subtitle-left {
+  font-size: 1rem;
+  color: var(--color-text);
+  max-width: 32rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.conoce {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.conoce .section-tag {
+  margin-bottom: 2rem;
+}
+
+.conoce-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.conoce-image {
+  height: 100%;
+}
+
+.conoce-line {
+  display: block;
+  width: 4.5rem;
+  height: 6px;
+  background-color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.conoce-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.porque-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.porque-card {
+  background-color: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.porque-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.porque-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.8rem;
+}
+
+.porque-card p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .porque-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .porque-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-description {
+  font-size: 1rem;
+  color: var(--color-text);
+  text-align: center;
+  max-width: 55rem;
+  margin: 0 auto 3rem;
+  line-height: 1.75;
 }
